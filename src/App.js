@@ -5,6 +5,8 @@ import Login from './Components/LoginUI/Login';
 import Sign from './Components/Signin/Sign';
 import { createContext, useState } from 'react';
 import { Navbar } from 'react-bootstrap';
+import Profile from './Components/Profile/Profile';
+import Navbaar from './Components/Header/Navbaar';
 
 export const ContextAPI = createContext();
 
@@ -13,11 +15,13 @@ function App() {
 
   const [inputVal, setInputVal] = useState({
     username: '',
-    photo: '',
+    URL: null,
     email: '',
     password: '',
+    bio: '',
     account: '',
-    error: ''
+    error: '',
+    isLogin: false
   });
 
   return (
@@ -28,6 +32,7 @@ function App() {
           <Route path='/login' element={<Login />} >   </Route>
           <Route path='/navbar' element={<Navbar />} >  </Route>
           <Route path='/home' element={<Home />} >   </Route>
+          <Route path='/profile' element={<Profile />} >   </Route>
           <Route path='/sign' element={<Sign />} >   </Route>
         </Routes>
       </div>

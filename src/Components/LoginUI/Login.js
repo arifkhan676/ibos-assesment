@@ -34,6 +34,7 @@ const Login = () => {
             signInWithEmailAndPassword(auth, inputVal.email, inputVal.password)
                 .then((res) => {
                     // Signed in 
+                    newUser.isLogin = true;
                     setInputVal(newUser);
                     navigateUSe();
                     // ...

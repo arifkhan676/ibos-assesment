@@ -23,7 +23,6 @@ const Sign = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         const newUser = { ...inputVal };
         if (inputVal.email && inputVal.password) {
             createUserWithEmailAndPassword(auth, inputVal.email, inputVal.password)
@@ -34,13 +33,25 @@ const Sign = () => {
                 .catch((error) => {
                     const errorCode = error.code;
                     const errorMessage = error.message;
-                    newUser.error = 'This Email already taken'
+                    newUser.error = 'This Email already or pass least 6'
                     setInputVal(newUser);
+                    console.log(errorMessage);
                     // ..
                 });
         }
     }
-    //console.log(inputVal);
+    console.log(inputVal);
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+
+        setInputVal((preValue) => {
+            return {
+                ...preValue,
+                file
+            }
+        });
+    };
 
     return (
         <div>
@@ -56,6 +67,10 @@ const Sign = () => {
                         <br />
                         <input type="password" name='password' onChange={handleChange} value={inputVal.password} placeholder='Password' />
                         <br />
+                        <textarea type="text" name='bio' onChange={handleChange} value={inputVal.bio} placeholder='Bio' />
+                        <br />
+                        <input type="file" accept="image/*" name='photoURL' onChange={handleImageChange} value={inputVal.photoURL} />
+                        <hr />
                         <button className='btn btn-primary' type='Submit' value='Submit'  > Create Account </button>
                     </form>
                     <hr />

@@ -23,3 +23,7 @@
 .dropdown-item a:hover{
     background-color: #FFCA2C;
 }
+.dropdown{
+    display: flex;
+    gap: 20px;
+}
