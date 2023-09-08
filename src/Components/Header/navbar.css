@@ -1,0 +1,25 @@
+
+.navbar{
+    background-color: #777799;
+    display: flex;
+    gap: 20%;
+}
+.nav-item{
+    margin-left: auto;
+}
+.nav-item ul{
+    display: flex;
+    gap: 20px;
+}
+.nav-item ul li{
+    list-style: none;
+}
+.nav-img{
+    width: 200px;
+}
+.dropdown-menu a{
+    background-color: #fff;
+}
+.dropdown-item a:hover{
+    background-color: #FFCA2C;
+}

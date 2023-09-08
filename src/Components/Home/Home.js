@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import './home.css'
+import { ContextAPI } from '../../App';
+import Navbar from '../Header/Navbar';
 
 const Home = () => {
+
+    const [inputVal, setInputVal] = useContext(ContextAPI);
+
     return (
-        <div>
-            <h1>Hello</h1>
+        <div className='home' >
+            <Navbar />
+
         </div>
     )
 }
